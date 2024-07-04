@@ -1,0 +1,325 @@
+* {
+    margin: 0%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#sect1 {
+    width: 100%;
+    height: 100vh;
+    border-bottom: 2px solid red;
+    padding: 5%;
+
+    .home-box {
+        background-color: #D8D6D8;
+        width: 600px;
+        height: 600px;
+        padding: 40px;
+        position: relative;
+
+        .box {
+            position: absolute;
+            width: 100px;
+            left: 40;
+            top: 40;
+            height: 100px;
+            animation-name: leftGo;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+
+        }
+    }
+}
+
+#sect2 {
+    width: 100%;
+    height: 50vh;
+    padding: 5%;
+
+    .box1 {
+        margin-top: 30px;
+        width: 500px;
+        height: 70px;
+        border: 2px solid black;
+
+        .mini-box {
+            /* width: 50%; */
+            background-color: blue;
+            height: 100%;
+            animation-name: water;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+    }
+
+    .box2 {
+        margin-top: 30px;
+        width: 500px;
+        height: 70px;
+        border: 2px solid black;
+
+        .mini-box {
+            width: 50%;
+            background-color: blue;
+            height: 100%;
+            animation-name: water;
+            animation-duration: 5s;
+            animation-timing-function: steps(1);
+            animation-iteration-count: infinite;
+
+        }
+    }
+}
+
+
+#sect3 {
+    width: 100%;
+    height: 100vh;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .box {
+        width: 500px;
+        border-radius: 10px;
+        height: 500px;
+        background-color: black;
+        animation-name: color;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+}
+
+
+#sect4{
+    width: 100%;
+    height: 100vh;
+    border: 10px solid cyan;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        margin: 50px 0px;
+        width: 200px;
+    }
+    .box{
+        .birinci{
+            position: relative;
+
+            &:hover{
+                &::before{
+                    bottom: -4px;
+                    left: 0;
+                }
+                &::after{
+                    top: -4px;
+                    left: 0;
+                }
+            }
+
+            &::before{
+                content: "";
+                transition: 0.3s ease-in-out;
+                position: absolute;
+                width: 100%;
+                height: 5px;
+                background-color: red;
+                bottom: 100%;
+                left: 0%;
+            }
+
+            &::after{
+                content: "";
+                transition: 0.3s ease-in-out;
+                position: absolute;
+                width: 100%;
+                height: 5px;
+                background-color: black;
+                top: 100%;
+                left: 0%;
+            }
+        }
+
+        .ikinci{
+            position: relative;
+            width: 200px;
+            height: 60px;
+            background-color: green;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover{
+                &::before{
+                    transform: scaleY(1.2) scaleX(1.07);
+                }
+            }
+            &::before{
+                content: "";
+                width: 194px;
+                transition: 0.3s ease-in-out;
+                height: 54px;
+                border: 3px solid green;
+                position: absolute;
+                transform: scale(1);
+                top: 0%;
+                left: 0%;
+            }
+        }
+
+        .ucuncu{
+            position: relative;
+            width: 200px;
+            height: 60px;
+            background-color: orange;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover{
+                &::before{
+                    left: 0%;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            &::before{
+                content: "";
+                width: 0%;
+                background-color: blue;
+                transition: 0.3s ease-in-out;
+                height: 0%;
+                position: absolute;
+                top: 0%;
+                left: 50%;
+            }
+
+        }
+
+       
+    }
+
+    .nav-menu{
+        width: 600px;
+        display: flex;
+        background-color: red;
+        justify-content: space-between;
+        height: 60px;
+        align-items: center;
+        padding: 20px;
+        a{
+        color: #fff;
+        text-decoration: none;
+        font-size: 25px;
+        position: relative;
+
+        &:hover{
+            &::before{
+                width: 100%;
+            }
+        }
+
+        &::before{
+            content: "";
+        transition: 0.3s ease-in-out;
+
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 0;
+            height: 5px;
+            background-color: #fff;
+        }
+        }
+    }
+}
+
+@keyframes color {
+    0% {
+        border: 10px solid rgba(252,121,69,57);
+    }
+
+    25%{
+        border: 10px solid rgba(131,58,180);
+    }
+
+    50%{
+        border: 10px solid rgba(156,231,242,100);
+    }
+
+    75%{
+        border: 10px solid rgba(131,58,180);
+    }
+
+    100% {
+        border: 10px solid rgba(252,121,69,57);
+    }
+
+}
+
+
+@keyframes water {
+    0% {
+        width: 35%;
+    }
+
+    25% {
+        width: 50%;
+    }
+
+    50% {
+        width: 75%;
+    }
+
+    100% {
+        width: 35%;
+    }
+
+
+}
+
+@keyframes leftGo {
+    0% {
+        left: 40px;
+        background-color: blue;
+        top: 40px;
+        border-radius: 100%;
+    }
+
+    25% {
+        top: 40px;
+        left: 460px;
+        border-radius: 0;
+        background-color: red;
+
+    }
+
+    50% {
+        top: 460px;
+        border-radius: 100%;
+        background-color: green;
+        left: 460px;
+    }
+
+    75% {
+        left: 40px;
+        border-radius: 0%;
+        background-color: orange;
+
+        top: 460px;
+    }
+
+    100% {
+        left: 40px;
+        border-radius: 100%;
+        background-color: blue;
+        top: 40px;
+    }
+}
